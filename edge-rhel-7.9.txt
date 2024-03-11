@@ -1,0 +1,34 @@
+
+To install Microsoft Edge on RHEL 7.9 using commands without downloading the RPM package manually, follow these steps:
+
+1. Ensure yum-config-manager is available
+Before adding the repository, ensure you have the yum-utils package installed, as it provides the yum-config-manager utility. If it's not already installed, you can install it by running:
+
+sudo yum install yum-utils
+
+
+
+2. Add Microsoft Edge repository:
+Run the following command to add the Microsoft Edge repository:
+
+
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+sudo yum config-manager --add-repo https://packages.microsoft.com/yumrepos/edge
+
+3. Update your package index
+After adding the repository, it's a good idea to refresh your package index. This ensures that yum is aware of the new packages available from the Microsoft Edge repository you just added:
+
+sudo yum makecache
+
+4. Install Microsoft Edge:
+Once the repository is added, you can install Microsoft Edge using yum:
+
+sudo yum update
+sudo yum install microsoft-edge-stable
+
+5. Launch Microsoft Edge:
+After installation, you can launch Microsoft Edge from the application menu or by typing 		"microsoft-edge" 			in the terminal.
+
+
+
+
